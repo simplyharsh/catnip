@@ -62,27 +62,27 @@ define ["jquery", "ace/editor", "ace/virtual_renderer", "ace/edit_session"
 
       @commands.addCommand
         name: "saveBuffer"
-        bindKey: "Ctrl-S"
+        bindKey: "Ctrl-Alt-S"
         exec: => @saveBuffer()
 
       @commands.addCommand
         name: "saveAndTest"
-        bindKey: "Ctrl-,"
+        bindKey: "Ctrl-Alt-,"
         exec: => @saveAndTest()
 
       @commands.addCommand
         name: "focusRepl"
-        bindKey: "Ctrl-R"
+        bindKey: "Ctrl-Alt-tab"
         exec: (env, args, request) -> $("#repl-input").focus()
 
       @commands.addCommand
         name: "selectFile"
-        bindKey: "Ctrl-F"
+        bindKey: "Ctrl-Alt-O"
         exec: => @selectFile()
 
       @commands.addCommand
         name: "selectBuffer"
-        bindKey: "Ctrl-B"
+        bindKey: "Ctrl-Alt-B"
         exec: => @selectBuffer()
 
       @commands.addCommand
@@ -92,17 +92,17 @@ define ["jquery", "ace/editor", "ace/virtual_renderer", "ace/edit_session"
 
       @commands.addCommand
         name: "documentSymbol"
-        bindKey: "Ctrl-H"
+        bindKey: "f1"
         exec: => @documentSymbol()
 
       @commands.addCommand
         name: "expandSnippet"
-        bindKey: "Ctrl-I"
+        bindKey: "Ctrl-Alt-I"
         exec: => @expandSnippet()
 
       @commands.addCommand
         name: "evaluateSexp"
-        bindKey: "Ctrl-E"
+        bindKey: "Ctrl-Alt-E"
         exec: => @evaluateSexp()
 
       @commands.addCommand

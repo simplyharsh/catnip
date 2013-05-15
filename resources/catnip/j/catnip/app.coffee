@@ -35,23 +35,23 @@ define ["jquery", "cs!./socket", "cs!./editor"
 
     editor.commands.addCommand
       name: "presentationMode"
-      bindKey: "Ctrl-P"
+      bindKey: "Ctrl-Alt-2"
       exec: -> togglePresentationMode()
 
     $(window).on "keydown", (e) ->
-      if keybindings.matchBinding e, "C-r"
+      if keybindings.matchBinding e, "M-C-tab"
         $(window.document.body).removeClass("presentation-mode")
         repl.focusEditor(e)
-      else if keybindings.matchBinding e, "C-s"
+      else if keybindings.matchBinding e, "M-C-s"
         editor.saveBuffer(e)
-      else if keybindings.matchBinding e, "C-1"
+      else if keybindings.matchBinding e, "M-C-1"
         e.preventDefault()
         if $(window.document.body).hasClass("presentation-mode")
           $(window.document.body).removeClass("presentation-mode")
           repl.focusEditor()
         browser.toggle()
         editor.resize()
-      else if keybindings.matchBinding e, "C-p"
+      else if keybindings.matchBinding e, "M-C-2"
         togglePresentationMode(e)
       else if $(window.document.body).hasClass("presentation-mode")
         keybindings.delegate e,
