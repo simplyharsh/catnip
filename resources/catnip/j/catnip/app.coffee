@@ -38,6 +38,9 @@ define ["jquery", "cs!./socket", "cs!./editor"
       bindKey: "Ctrl-Alt-2"
       exec: -> togglePresentationMode()
 
+    $('#intro-menu').on "click", (e) ->
+      $('#view').attr('src', '/intro.html')
+
     $(window).on "keydown", (e) ->
       if keybindings.matchBinding e, "M-C-tab"
         $(window.document.body).removeClass("presentation-mode")
