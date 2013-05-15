@@ -5,8 +5,9 @@
 define ["jquery", "ace/editor", "ace/virtual_renderer", "ace/edit_session"
         "ace/undomanager", "ace/multi_select"
         "cs!./keybindings", "cs!./suggestbox", "cs!./modemap"
-        "cs!./fileselector", "cs!./filecreator", "cs!./doctip"
-], ($, ace_editor, virtual_renderer, edit_session, undomanager, multi_select, keybindings, SuggestBox, modemap, FileSelector, FileCreator, Doctip) ->
+        "cs!./fileselector", "cs!./filecreator", "cs!./doctip",
+        "ace/keyboard/emacs"
+], ($, ace_editor, virtual_renderer, edit_session, undomanager, multi_select, keybindings, SuggestBox, modemap, FileSelector, FileCreator, Doctip, Emacs) ->
 
   AceEditor = ace_editor.Editor
   Renderer = virtual_renderer.VirtualRenderer
@@ -37,9 +38,11 @@ define ["jquery", "ace/editor", "ace/virtual_renderer", "ace/edit_session"
       @keyBinding.addKeyboardHandler
         handleKeyboard: @keyboardDelegate
 
+      @keyBinding.addKeyboardHandler Emacs.handler
+
       @commands.addCommand
         name: "removetolineend"
-        bindKey: "Ctrl-K"
+        bindKey: "Ctrl-Alt-K"
         exec: => @removeToLineEnd()
 
       @commands.addCommand
