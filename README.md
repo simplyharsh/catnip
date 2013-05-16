@@ -3,14 +3,14 @@
 ![Catnip](http://images.cheezburger.com/completestore/2011/5/4/8f08152b-aef2-48ca-964d-06cc5802f2c8.jpg)
 
 Catnip is a Leiningen plugin providing a fully functional text editor
-and REPL environment geared towards web development with Clojure and
-ClojureScript.
+(with Emacs key-bindings) and REPL environment geared towards web development with
+Clojure and ClojureScript.
 
 Catnip's primary goals are to facilitate the teaching of Clojure, and
 to provide a simple yet powerful development environment for the
 novice Clojure user.
 
-![Screenshot](https://raw.github.com/bodil/catnip/master/catnip-screenshot-light.png)
+![Screenshot](https://raw.github.com/simplyharsh/catnip/master/catnip-screenshot-dark.png)
 
 ## Installation
 
